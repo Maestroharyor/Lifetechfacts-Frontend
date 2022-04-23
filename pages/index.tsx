@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         desc="The best tech/coding mentorship program for you"
       >
         <>
-          <div className="grid grid-cols-1 md:grid-cols-12 gap-x-5 gap-y-10 py-16 px-5 md:px-10 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-x-5 gap-y-10 py-16 px-5 md:px-16 items-center">
             <div className="md:col-span-6 flex flex-col gap-5">
               <h1 className="text-primary dark:text-white text-5xl md:text-7xl font-bold">
                 Best Coding Mentorship Program is Here
@@ -50,10 +50,10 @@ const Home: NextPage = () => {
           </div>
 
           <div className="bg-blue-900 dark:bg-dark-background/70 py-16 px-5 md:px-10 ">
-            <div className="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-10  items-center text-white  max-w-[1300px] mx-auto ">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-10  items-center text-white  max-w-[1200px] mx-auto ">
               <div className="md:col-span-7 flex flex-col gap-7">
                 <h2
-                  className="leading-[5rem] text-blue-100 text-5xl md:text-7xl font-bold "
+                  className="leading-[5rem] text-blue-50 text-5xl md:text-7xl font-bold "
                   style={{ lineHeight: "5.5rem" }}
                 >
                   Registration is Currently Ongoing for PHASE 1

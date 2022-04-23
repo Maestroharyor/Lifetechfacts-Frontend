@@ -44,7 +44,7 @@ const MainHeader = (props: any) => {
               <a
                 className={`text-lg transition duration-300 ease-in-out ${
                   router.pathname === menu.link
-                    ? "text-primary dark:text-warning hover:text-warning dark:hover:text-white"
+                    ? "text-primary dark:text-warning hover:text-primary-hove dark:hover:text-warning-hov"
                     : "hover:text-primary dark:text-white dark:hover:text-warning"
                 }`}
               >

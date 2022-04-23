@@ -16,6 +16,7 @@ const Footer = dynamic(
 )
 import Metadata from "../Headers/Partials/Metadata";
 import { connect, useDispatch } from "react-redux";
+import SidebarSocial from "../Partials/SidebarSocial";
 
 type Props = {
   title: string;
@@ -35,6 +36,7 @@ const DefaultLayout = (props: Props) => {
       <Mobileheader />
       <div className="h-full bg-gray-100 dark:bg-dark dark:text-light">
         {props.children}
+        <SidebarSocial />
       </div>
       <Footer />
     </>
