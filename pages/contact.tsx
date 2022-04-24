@@ -18,7 +18,7 @@ const Community: NextPage = () => {
             height={229}
           />
           <div className="text-center">
-            <h1 className="text-3xl md:text-6xl font-bold mb-6">
+            <h1 className="text-3xl md:text-6xl font-bold mb-6 dark:text-white">
               Have a question or enquiry?
             </h1>
             <div className="inline-flex flex-col sm:flex-row gap-5 justify-start">

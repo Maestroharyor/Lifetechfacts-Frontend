@@ -53,7 +53,7 @@ const Home: NextPage = () => {
             <div className="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-10  items-center text-white  max-w-[1200px] mx-auto ">
               <div className="md:col-span-7 flex flex-col gap-7">
                 <h2
-                  className="leading-[5rem] text-blue-50 text-5xl md:text-7xl font-bold "
+                  className="leading-[5rem] text-blue-50 text-5xl md:text-7xl font-bold dark:text-white"
                   style={{ lineHeight: "5.5rem" }}
                 >
                   Registration is Currently Ongoing for PHASE 1
@@ -74,10 +74,15 @@ const Home: NextPage = () => {
                   </div>
                   <div className="">
                     {/* <FaCode /> */}
-                    <p className="text-primary text-7xl font-bold">$5 <span className="text-dark dark:text-white text-lg">only</span></p>
+                    <p className="text-primary text-7xl font-bold">
+                      $5{" "}
+                      <span className="text-dark dark:text-white text-lg">
+                        only
+                      </span>
+                    </p>
                   </div>
-                  <h3 className="text-3xl font-bold">
-                    Front-end Web Development 
+                  <h3 className="text-3xl font-bold dark:text-white">
+                    Front-end Web Development
                   </h3>
                   <p>
                     This program deals with learning how to build the front-end
@@ -99,12 +104,12 @@ const Home: NextPage = () => {
           </div>
 
           <div className=" py-20">
-            <div className="max-w-[800px] mx-auto">
+            <div className="px-5 md:px-0 max-w-[800px] mx-auto">
               <div className="text-center">
                 <p className="text-primary dark:text-warning mb-2">
                   Got Questions?
                 </p>
-                <h3 className="font-bold text-5xl mb-10">
+                <h3 className="font-bold text-5xl mb-10 dark:text-white">
                   Frequently Asked Questions
                 </h3>
               </div>
@@ -112,9 +117,7 @@ const Home: NextPage = () => {
               <div className="flex flex-col gap-3 mt-8 justify-center items-center">
                 <p>Still have questions? No problem</p>
                 <Link href="/contact" passHref>
-                  <a
-                    className="flex items-center gap-5 px-5 py-1.5 rounded-full bg-success hover:bg-success-hov text-white shadow transition duration-300 ease-in-out text-lg  justify-center"
-                  >
+                  <a className="flex items-center gap-5 px-5 py-1.5 rounded-full bg-success hover:bg-success-hov text-white shadow transition duration-300 ease-in-out text-lg  justify-center">
                     <span>Contact Lifetechfacts</span>{" "}
                     <MdArrowRightAlt size={40} />
                   </a>
@@ -123,19 +126,13 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="bg-white dark:bg-dark-background/70 py-16 px-5 md:px-10" id="register">
+          <div
+            className="bg-white dark:bg-dark-background/70 py-16 px-5 md:px-10"
+            id="register"
+          >
             <div className=" gap-x-16 gap-y-10  items-center text-dark  max-w-[500px] mx-auto">
-            <div className="text-center">
-                <p className="text-gray-700 dark:text-warning mb-2">
-                  Ready to get Started?
-                </p>
-                <h3 className="text-primary dark:text-white font-bold text-5xl mb-10">
-                  Register Now
-                </h3>
-              </div>
               <RegistrationForm />
             </div>
-            
           </div>
         </>
       </DefaultLayout>

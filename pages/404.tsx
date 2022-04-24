@@ -17,7 +17,7 @@ const NotFound: NextPage = () => {
             height={229}
           />
           <div className="text-center">
-            <h1 className="text-3xl md:text-6xl font-bold mb-6">Oops. Page Not Found!!!</h1>
+            <h1 className="text-3xl md:text-6xl font-bold mb-6 dark:text-white">Oops. Page Not Found!!!</h1>
             <p className="text-lg font-medium">The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.</p>
           </div>
         </div>
