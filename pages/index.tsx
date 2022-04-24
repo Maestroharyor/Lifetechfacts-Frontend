@@ -38,7 +38,7 @@ const Home: NextPage = () => {
               </div>
             </div>
             <div className="md:col-span-6 flex items-center justify-center">
-              <div className="">
+              <div className="hidden md:block">
                 <Image
                   src={"/img/general/Lifetechfacts Code.png"}
                   alt="programmer"
@@ -76,9 +76,9 @@ const Home: NextPage = () => {
                     {/* <FaCode /> */}
                     <p className="text-primary text-7xl font-bold">$5 <span className="text-dark dark:text-white text-lg">only</span></p>
                   </div>
-                  <h4 className="text-3xl font-bold">
+                  <h3 className="text-3xl font-bold">
                     Front-end Web Development 
-                  </h4>
+                  </h3>
                   <p>
                     This program deals with learning how to build the front-end
                     of a web application/website. A front-end developer will be
@@ -111,9 +111,8 @@ const Home: NextPage = () => {
               <Faqs />
               <div className="flex flex-col gap-3 mt-8 justify-center items-center">
                 <p>Still have questions? No problem</p>
-                <Link href="/contact">
+                <Link href="/contact" passHref>
                   <a
-                    href=""
                     className="flex items-center gap-5 px-5 py-1.5 rounded-full bg-success hover:bg-success-hov text-white shadow transition duration-300 ease-in-out text-lg  justify-center"
                   >
                     <span>Contact Lifetechfacts</span>{" "}
