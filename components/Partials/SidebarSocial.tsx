@@ -13,7 +13,7 @@ type Props = {};
 
 function SidebarSocial({}: Props) {
   return (
-    <div className="hidden fixed top-[50%] left-0 md:flex flex-col">
+    <div className="hidden fixed top-[30%] left-0 md:flex flex-col">
         
         <Tooltip placement="right" title={"Follow on Facebook"} arrow className='transition duration-300 ease-in-out'>
         <a

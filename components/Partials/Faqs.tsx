@@ -42,7 +42,7 @@ function Faqs({}: Props) {
             id="panel1a-header"
             className="dark:bg-dark-background dark:text-white"
           >
-            <Typography><p className="text-2xl font-bold">{faq.question}</p></Typography>
+            <Typography className="text-2xl font-bold">{faq.question}</Typography>
           </AccordionSummary>
           <AccordionDetails>
             <Typography>
