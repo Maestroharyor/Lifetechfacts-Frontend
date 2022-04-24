@@ -1,4 +1,4 @@
-html{
+html {
   scroll-behavior: smooth;
 }
 
@@ -6,7 +6,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "koHo", sans-serif; 
+  font-family: "koHo", sans-serif;
 }
 
 a {
@@ -18,49 +18,48 @@ a {
   box-sizing: border-box;
 }
 
-html.dark .MuiSvgIcon-root.MuiSvgIcon-fontSizeMedium.css-i4bv87-MuiSvgIcon-root{
+html.dark .MuiFormLabel-root,
+html.dark .MuiInputBase-input,
+html.dark .MuiSelect-icon {
   color: #fff;
 }
 
-html.dark .css-aqpgxn-MuiFormLabel-root-MuiInputLabel-root, html.dark .css-pqjvzy-MuiSvgIcon-root-MuiSelect-icon{
-  color: #fff;
-}
-
-html.dark .css-1ptx2yq-MuiInputBase-root-MuiInput-root::before, html.dark .css-a3l6o-MuiInputBase-root-MuiInput-root-MuiSelect-root::before{
+html.dark .MuiInput-underline::before {
   border-color: #fff;
 }
 
-html.dark .css-1ptx2yq-MuiInputBase-root-MuiInput-root:hover:not(.Mui-disabled)::before, html.dark .css-a3l6o-MuiInputBase-root-MuiInput-root-MuiSelect-root:hover:not(.Mui-disabled)::before{
-  border-color: #FFA900;
+html.dark .MuiInput-underline:hover:not(.Mui-disabled)::before {
+  border-color: #ffa900;
 }
 
-html.dark .css-6hp17o-MuiList-root-MuiMenu-list{
+html.dark .MuiPopover-paper {
   background-color: #262626;
   color: #fff;
 }
-
-html.dark .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root{
+html.dark .MuiListItem-button {
   transition: all 0.3s ease-in-out;
 }
-html.dark .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root:hover{
+html.dark .MuiListItem-button:hover {
   background-color: #181818;
 }
-
-html.dark .css-kk1bwy-MuiButtonBase-root-MuiMenuItem-root.Mui-selected:hover{
+html.dark .MuiListItem-root.Mui-selected:hover {
   background-color: rgba(25, 118, 210, 0.08);
 }
+/*
+
+
 
 .css-ahj2mt-MuiTypography-root{
   font-family: "koHo", sans-serif; 
-}
+} */
 
 /* Socials */
-.social-floating-button{
+.social-floating-button {
   width: 40px;
   height: 40px;
   transition: all 0.3s ease-in-out;
 }
 
-.social-floating-button:hover{
+.social-floating-button:hover {
   width: 60px;
 }

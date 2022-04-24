@@ -6,7 +6,7 @@ import { connect, useDispatch } from "react-redux";
 import { setDarkModeTheme, setLightModeTheme } from "../../store/theme/action";
 import { menuData } from "../../data/menu";
 import { setTimeout } from "timers";
-import MaterialUISwitch from "./Partials/MaterialUISwitch";
+// import MaterialUISwitch from "./Partials/MaterialUISwitch";
 
 
 type Props = {};
@@ -54,7 +54,7 @@ const MainHeader = (props: any) => {
           ))}
           <Link href="/#register" passHref><a className="block px-10 py-2 rounded-full bg-primary hover:bg-primary-hov text-white shadow transition duration-300 ease-in-out font-bold text-xl">Register</a></Link>
         </div>
-        <MaterialUISwitch
+        {/* <MaterialUISwitch
           sx={{ m: 1 }}
           // defaultChecked={isLight}
           checked={isLight}
@@ -67,7 +67,7 @@ const MainHeader = (props: any) => {
               dispatch(setLightModeTheme());
             }
           }}
-        />
+        /> */}
       </div>
     </header>
   );

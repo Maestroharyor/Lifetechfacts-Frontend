@@ -1,8 +1,9 @@
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import Typography from "@material-ui/core/Typography";
+import {MdKeyboardArrowDown} from "react-icons/md";
+// import ExpandMoreIcon from "@material-ui/core/icons-material/ExpandMore";
 
 type Props = {};
 
@@ -37,7 +38,7 @@ function Faqs({}: Props) {
         {faqslist.map(faq => (
           <Accordion className="dark:bg-dark-background dark:text-white" key={faq.question} style={{fontFamily:`"koHo", sans-serif`}}>
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon className="dark:text-white" />}
+            expandIcon={<MdKeyboardArrowDown className="dark:text-white" />}
             aria-controls="panel1a-content"
             id="panel1a-header"
             className="dark:bg-dark-background dark:text-white"

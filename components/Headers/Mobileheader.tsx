@@ -6,7 +6,7 @@ import { MdMenu, MdClose } from "react-icons/md";
 import { connect, useDispatch } from "react-redux";
 import { setDarkModeTheme, setLightModeTheme } from "../../store/theme/action";
 import { menuData } from "../../data/menu";
-import MaterialUISwitch from "./Partials/MaterialUISwitch";
+// import MaterialUISwitch from "./Partials/MaterialUISwitch";
 
 type Props = {};
 
@@ -48,7 +48,7 @@ const MobileHeader = (props: any) => {
       </Link>
 
       <div className="flex gap-3 items-center">
-        <MaterialUISwitch
+        {/* <MaterialUISwitch
           sx={{ m: 1 }}
           // defaultChecked={isLight}
           checked={isLight}
@@ -60,7 +60,7 @@ const MobileHeader = (props: any) => {
               dispatch(setLightModeTheme());
             }
           }}
-        />
+        /> */}
         <button
           aria-label="Mobile Menu Navigation Button"
           className="text-2xl text-dark dark:text-white hover:text-primary dark:hover:text-warning transition ease-in-out duration-300"
