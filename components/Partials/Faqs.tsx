@@ -37,7 +37,7 @@ function Faqs({}: Props) {
         {faqslist.map(faq => (
           <Accordion className="dark:bg-dark-background dark:text-white" key={faq.question}>
           <AccordionSummary
-            expandIcon={<ExpandMoreIcon />}
+            expandIcon={<ExpandMoreIcon className="dark:text-white" />}
             aria-controls="panel1a-content"
             id="panel1a-header"
             className="dark:bg-dark-background dark:text-white"
