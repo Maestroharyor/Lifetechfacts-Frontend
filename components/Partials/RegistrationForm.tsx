@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, ChangeEvent } from "react";
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -10,8 +10,8 @@ type Props = {};
 const RegistrationForm = (props: Props) => {
   const [age, setAge] = useState("");
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value);
+  const handleChange = (event: ChangeEvent<{ value: unknown }>) => {
+    setAge(event.target.value as string);
   };
   return (
     <>
