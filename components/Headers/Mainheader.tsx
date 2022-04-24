@@ -5,7 +5,10 @@ import Link from "next/link";
 import { connect, useDispatch } from "react-redux";
 import { setDarkModeTheme, setLightModeTheme } from "../../store/theme/action";
 import { menuData } from "../../data/menu";
-import { setTimeout } from "timers";
+import {Switch} from "antd";
+import {MdWbSunny} from "react-icons/md";
+import {FaMoon} from "react-icons/fa";
+// import { setTimeout } from "timers";
 // import MaterialUISwitch from "./Partials/MaterialUISwitch";
 
 
@@ -54,6 +57,22 @@ const MainHeader = (props: any) => {
           ))}
           <Link href="/#register" passHref><a className="block px-10 py-2 rounded-full bg-primary hover:bg-primary-hov text-white shadow transition duration-300 ease-in-out font-bold text-xl">Register</a></Link>
         </div>
+        <Switch
+        aria-label="Switch Theme Button"
+          checkedChildren={<MdWbSunny className="text-white dark:text-dark" />}
+          unCheckedChildren={<FaMoon className="text-white dark:text-dark" />}
+          defaultChecked={props.theme.lightMode}
+          onChange={(checked) => {
+            // console.log(checked)
+            if (props.theme.lightMode) {
+              dispatch(setDarkModeTheme());
+            } else {
+              dispatch(setLightModeTheme());
+            }
+          }}
+          checked={props.theme.lightMode}
+          className="bg-primary dark:bg-warning text-lg"
+        />
         {/* <MaterialUISwitch
           sx={{ m: 1 }}
           // defaultChecked={isLight}

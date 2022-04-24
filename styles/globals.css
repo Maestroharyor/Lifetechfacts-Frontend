@@ -45,13 +45,15 @@ html.dark .MuiListItem-button:hover {
 html.dark .MuiListItem-root.Mui-selected:hover {
   background-color: rgba(25, 118, 210, 0.08);
 }
-/*
 
+.MuiTypography-body1 {
+  font-family: "koHo", sans-serif !important;
+}
 
-
-.css-ahj2mt-MuiTypography-root{
-  font-family: "koHo", sans-serif; 
-} */
+.MuiAccordionSummary-content .MuiTypography-body1{
+  font-weight: bold;
+  font-size: 1.5rem;
+}
 
 /* Socials */
 .social-floating-button {
