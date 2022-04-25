@@ -21,12 +21,12 @@ interface formData {
   paymentStatus: boolean | string;
 }
 
-type PaystackProps = {
-  reference: string;
-  email: string;
-  amount: number;
-  publicKey: string | undefined;
-};
+// type PaystackProps = {
+//   reference: string;
+//   email: string;
+//   amount: number;
+//   publicKey: string | undefined;
+// };
 
 const RegistrationForm: FC = (props: Props) => {
   const [fullname, setFullname] = useState("");
@@ -39,7 +39,7 @@ const RegistrationForm: FC = (props: Props) => {
   const [loading, setLoading] = useState(false);
   const [registered, setRegistered] = useState(false);
 
-  const config: PaystackProps = {
+  const config = {
     reference: new Date().getTime().toString(),
     email: email,
     amount: 200000,
