@@ -20,7 +20,7 @@ function SidebarSocial({}: Props) {
           href="https://www.facebook.com/lifetechfactsofficial"
           target="_blank"
           rel="noreferrer"
-          className="social-floating-button flex items-center justify-center text-xl  bg-[#4267B2] hover:bg-primary-hov text-white"
+          className="social-floating-button flex items-center justify-center text-xl  bg-[#4267B2] hover:bg-primary-hov text-white hover:text-white"
           
         >
           <FaFacebook />
@@ -31,7 +31,7 @@ function SidebarSocial({}: Props) {
           href="https://www.instagram.com/lifetechfacts"
           target="_blank"
           rel="noreferrer"
-          className="social-floating-button flex items-center justify-center text-xl  text-white bg-gradient-to-r from-[#f09433] to-[#bc1888] hover:bg-gradient-to-r shadow"
+          className="social-floating-button flex items-center justify-center text-xl  text-white bg-gradient-to-r from-[#f09433] to-[#bc1888] hover:bg-gradient-to-r shadow hover:text-white"
           
         >
           <FaInstagram />
@@ -42,7 +42,7 @@ function SidebarSocial({}: Props) {
           href="https://www.youtube.com/channel/UC3F9OKsRWvnnaMJ2XoS4GVw"
           target="_blank"
           rel="noreferrer"
-          className="social-floating-button flex items-center justify-center text-xl  bg-[#c4302b] hover:bg-red-700 text-white"
+          className="social-floating-button flex items-center justify-center text-xl  bg-[#c4302b] hover:bg-red-700 text-white hover:text-white"
           
         >
           <FaYoutube />
@@ -53,7 +53,7 @@ function SidebarSocial({}: Props) {
           href="https://chat.whatsapp.com/Fgr6l2dKWeYDEEkvd0xNJM"
           target="_blank"
           rel="noreferrer"
-          className="social-floating-button flex items-center justify-center text-xl bg-[#128C7E] hover:bg-blue-900 text-white"
+          className="social-floating-button flex items-center justify-center text-xl bg-[#128C7E] hover:bg-blue-900 text-white hover:text-white"
           
         >
           <FaWhatsapp />
@@ -64,7 +64,7 @@ function SidebarSocial({}: Props) {
           href="https://t.me/lifetechfactsofficial"
           target="_blank"
           rel="noreferrer"
-          className="social-floating-button flex items-center justify-center text-xl  bg-[#0088cc] hover:bg-blue-900 text-white"
+          className="social-floating-button flex items-center justify-center text-xl  bg-[#0088cc] hover:bg-blue-900 text-white hover:text-white"
           
         >
           <FaTelegram />
