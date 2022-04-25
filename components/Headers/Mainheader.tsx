@@ -55,7 +55,7 @@ const MainHeader = (props: any) => {
               </a>
             </Link>
           ))}
-          <Link href="/#register" passHref><a className="block px-10 py-2 rounded-full bg-primary hover:bg-primary-hov text-white shadow transition duration-300 ease-in-out font-bold text-xl">Register</a></Link>
+          <Link href="/#register" passHref><a className="block px-10 py-2 rounded-full bg-primary hover:bg-primary-hov text-white hover:text-white shadow transition duration-300 ease-in-out font-bold text-xl">Register</a></Link>
         </div>
         <Switch
         aria-label="Switch Theme Button"
