@@ -5,7 +5,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { message, Spin } from "antd";
-import { usePaystackPayment } from "react-paystack";
+import { usePaystackPayment,  } from "react-paystack";
 import axios from "axios";
 import { baseUrl } from "../../server/index";
 
@@ -43,7 +43,7 @@ const RegistrationForm: FC = (props: Props) => {
     reference: new Date().getTime().toString(),
     email: email,
     amount: 200000,
-    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
+    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY === undefined ? "" : process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
   };
 
   // you can call this function anything
@@ -60,7 +60,7 @@ const RegistrationForm: FC = (props: Props) => {
       ageGroup,
       course,
       gender,
-      paymentStatus: JSON.stringify(paymentStatus),
+      paymentStatus: "true",
     };
 
     setLoading(true);
