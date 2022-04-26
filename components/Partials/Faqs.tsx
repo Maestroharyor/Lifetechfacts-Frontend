@@ -23,7 +23,7 @@ const faqslist:faqs[] = [
     },
     {
         question:"Is it very beginner friendly?",
-        body:"₦2,000 only. This is approximately $5. Pretty Cheap right?"
+        body:"Yes. You don't need any previous coding knowledge. But if you do, then that's also great!"
     },
     {
         question:"What happens if i join and I’m not active?",

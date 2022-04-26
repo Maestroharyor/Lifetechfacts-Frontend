@@ -74,12 +74,13 @@ const Home: NextPage = () => {
                   </div>
                   <div className="">
                     {/* <FaCode /> */}
-                    <p className="text-primary text-7xl font-bold">
-                      $5{" "}
+                    <p className="text-primary text-7xl font-bold mb-2">
+                      $5
                       <span className="text-dark dark:text-white text-lg">
-                        only
+                        {" "}only
                       </span>
                     </p>
+                    <p className="text-xl italic font-medium">(₦2,000)</p>
                   </div>
                   <h3 className="text-3xl font-bold dark:text-white">
                     Front-end Web Development
@@ -95,7 +96,7 @@ const Home: NextPage = () => {
                       3 Weeks
                     </p>
                     <p className="flex-1 text-center px-3 text-white">
-                      Pratical Projects
+                      Practical Projects
                     </p>
                   </div>
                 </div>
