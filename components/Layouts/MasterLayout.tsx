@@ -25,10 +25,12 @@ const MasterLayout = (props: any) => {
       {/* <Backtotop /> */}
 
       <Script
+      id="google-tagmanager-link"
         async
         src="https://www.googletagmanager.com/gtag/js?id=G-4J366QMVGZ"
       ></Script>
       <Script
+      id="google-tag-code"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
