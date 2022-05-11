@@ -90,19 +90,32 @@ const MobileHeader = (props: any) => {
             >
               <MdClose />
             </button>
-            {menuData.map((menu) => (
-              <Link href={menu.link} key={menu.title}>
-                <a
-                  className={`text-xl sm:text-2xl transition duration-300 ease-in-out  ${
-                    router.pathname === menu.link
-                      ? "text-primary dark:text-warning"
-                      : "text-dark hover:text-primary dark:text-white dark:hover:text-warning"
-                  }`}
-                >
-                  {menu.title}
-                </a>
-              </Link>
-            ))}
+            {menuData.map((menu) => {
+          return (
+            <div key={menu.title}>
+              {menu.external &&  <a
+                    href={menu.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`text-xl sm:text-2xl transition duration-300 ease-in-out text-dark hover:text-primary dark:text-white dark:hover:text-warning font-bolder`}
+                    // key={menu.title}
+                  >
+                    {menu.title}
+                  </a>}
+                {!menu.external &&  <Link href={menu.link} key={menu.title}>
+                    <a
+                      className={`text-xl sm:text-2xl transition duration-300 ease-in-out  ${
+                        router.pathname === menu.link
+                          ? "text-primary dark:text-warning"
+                          : "text-dark hover:text-primary dark:text-white dark:hover:text-warning"
+                      }`}
+                    >
+                      {menu.title}
+                    </a>
+                  </Link>}
+            </div>
+          )
+            })}
             <Link href="/#register" passHref><a className="text-center block px-5 py-2 rounded-full bg-primary hover:bg-primary-hov text-white shadow transition duration-300 ease-in-out text-xl font-bold">Register</a></Link>
           </div>
         </>

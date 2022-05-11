@@ -42,19 +42,59 @@ const MainHeader = (props: any) => {
 
       <div className="flex gap-6 items-center">
         <div className="inline-flex items-center gap-5">
-          {menuData.map((menu) => (
-            <Link href={menu.link} key={menu.title}>
-              <a
-                className={`text-lg transition duration-300 ease-in-out ${
-                  router.pathname === menu.link
-                    ? "text-primary dark:text-warning hover:text-primary-hove dark:hover:text-warning-hov"
-                    : "hover:text-primary dark:text-white dark:hover:text-warning"
-                }`}
-              >
-                {menu.title}
-              </a>
-            </Link>
-          ))}
+        {menuData.map((menu) => {
+          return (
+            <div key={menu.title}>
+              {menu.external &&  <a
+                    href={menu.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={` text-lg transition duration-300 ease-in-out text-dark hover:text-primary dark:text-white dark:hover:text-warning font-bolder`}
+                    // key={menu.title}
+                  >
+                    {menu.title}
+                  </a>}
+                {!menu.external &&  <Link href={menu.link} key={menu.title}>
+                    <a
+                      className={`text-lg transition duration-300 ease-in-out  ${
+                        router.pathname === menu.link
+                          ? "text-primary dark:text-warning"
+                          : "text-dark hover:text-primary dark:text-white dark:hover:text-warning"
+                      }`}
+                    >
+                      {menu.title}
+                    </a>
+                  </Link>}
+            </div>
+          )
+              // if (menu.external) {
+              //   return (
+              //     <a
+              //       href={menu.link}
+              //       target="_blank"
+              //       rel="noreferrer"
+              //       className={`font-bold text-lg transition duration-300 ease-in-out text-dark hover:text-primary dark:text-white dark:hover:text-warning`}
+              //       key={menu.title}
+              //     >
+              //       {menu.title}
+              //     </a>
+              //   );
+              // } else {
+              //   return (
+              //     <Link href={menu.link} key={menu.title}>
+              //       <a
+              //         className={`text-lg transition duration-300 ease-in-out  ${
+              //           router.pathname === menu.link
+              //             ? "text-primary dark:text-warning"
+              //             : "text-dark hover:text-primary dark:text-white dark:hover:text-warning"
+              //         }`}
+              //       >
+              //         {menu.title}
+              //       </a>
+              //     </Link>
+              //   );
+              // }
+            })}
           <Link href="/#register" passHref><a className="block px-10 py-2 rounded-full bg-primary hover:bg-primary-hov text-white hover:text-white shadow transition duration-300 ease-in-out font-bold text-xl">Register</a></Link>
         </div>
         <Switch
@@ -73,20 +113,6 @@ const MainHeader = (props: any) => {
           checked={props.theme.lightMode}
           className="bg-primary dark:bg-warning text-lg"
         />
-        {/* <MaterialUISwitch
-          sx={{ m: 1 }}
-          // defaultChecked={isLight}
-          checked={isLight}
-          // defaultChecked={isLight}
-          // lightMode={props.theme.lightMode}
-          onChange={() => {
-            if (props.theme.lightMode) {
-              dispatch(setDarkModeTheme());
-            } else {
-              dispatch(setLightModeTheme());
-            }
-          }}
-        /> */}
       </div>
     </header>
   );
