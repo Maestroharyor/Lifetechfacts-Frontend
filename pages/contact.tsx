@@ -13,7 +13,7 @@ const Community: NextPage = () => {
         <div className="max-w-[700px] px-5 md:px-0 mx-auto flex flex-col gap-10 justify-center items-center h-[calc(100vh-118px)]">
           <Image
             src="/svg/contact-us.svg"
-            alt="404 - Page Not Found"
+            alt="Contact Us"
             width={420}
             height={229}
           />
