@@ -15,7 +15,7 @@ interface faqs{
 const faqslist:faqs[] = [
     {
         question:"How much does the training cost?",
-        body:"₦2,000 only. This is approximately $5. Pretty Cheap right?"
+        body:"That depends on the program you're interested in. Our frontend starter course for example is ₦2,000 only (approximately $5). Pretty Cheap right?"
     },
     {
         question:"What are the things I would need to participate?",
@@ -28,6 +28,10 @@ const faqslist:faqs[] = [
     {
         question:"What happens if i join and I’m not active?",
         body:"Participants who join the program and stop engaging will be given the chance to catch up. I will also be there to mentor and help you."
+    },
+    {
+        question:"Do I have access to the lessons afterwards?",
+        body:"Definitely! You will be able to access the lessons after the program. All our program comes with lifetime access."
     },
 
 ]

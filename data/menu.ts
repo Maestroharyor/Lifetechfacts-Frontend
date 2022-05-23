@@ -11,9 +11,14 @@ export const menuData:menus[] = [
         external: false
     },
     {
+        title: "All Courses",
+        link: "/courses",
+        external: false
+    },
+    {
         title: "Visit Blog",
         link: "https://www.thelifetechfacts.com",
-        external: false
+        external: true
     },
     {
         title: "Join Community",
