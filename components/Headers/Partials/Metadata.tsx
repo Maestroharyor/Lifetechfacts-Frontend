@@ -23,7 +23,7 @@ const Metadata = ({ title, metadescription, imageUrl }: Props) => {
     description = process.env.titleDescription;
   }
 
-  previewImage = imageUrl ? imageUrl : "/svg/pair-programming.svg";
+  previewImage = imageUrl ? imageUrl : "/img/general/Life Tech Facts Cover.jpg";
   return (
     <Head>
       <meta charSet="UTF-8" />
