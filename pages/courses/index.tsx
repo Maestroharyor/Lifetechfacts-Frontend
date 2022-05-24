@@ -6,17 +6,18 @@ import axios from "axios";
 import { CourseData } from "../../data/courses";
 import CourseCard from "../../components/Cards/CourseCard";
 import { FaTwitter } from "react-icons/fa";
+import {baseUrl} from "../../server/index"
 
 export const getStaticProps: GetStaticProps = async () => {
   const courses = await axios.get(
-    `${process.env.NEXT_PUBLIC_CURRENTURL}/courses`
+    `${baseUrl}/courses`
   );
 
   return {
     props: {
       courses: courses.data.courses,
     },
-    // revalidate: 1,
+    revalidate: 1,
   };
 };
 

@@ -1,3 +1,4 @@
+import {useState, useEffect} from "react";
 import type { NextPage } from "next";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Image from "next/image";
@@ -8,6 +9,7 @@ import { CourseData } from "../../data/courses";
 import CourseCard from "../../components/Cards/CourseCard";
 import { FaChevronLeft, FaTwitter } from "react-icons/fa";
 import { ParsedUrlQuery } from "querystring";
+import {baseUrl} from "../../server/index"
 
 interface IParams extends ParsedUrlQuery {
   slug: string;
@@ -15,7 +17,7 @@ interface IParams extends ParsedUrlQuery {
 
 export const getStaticPaths: GetStaticPaths = async (context) => {
   const courses = await axios.get(
-    `${process.env.NEXT_PUBLIC_CURRENTURL}/courses`
+    `${baseUrl}/courses`
   );
 
   const paths = courses.data.courses.map((course: CourseData) => {
@@ -31,7 +33,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
 export const getStaticProps: GetStaticProps = async (context) => {
   const { slug } = context.params as IParams;
   const courses = await axios.get(
-    `${process.env.NEXT_PUBLIC_CURRENTURL}/courses`
+    `${baseUrl}/courses`
   );
 
   const course: CourseData = courses.data.courses.filter(
@@ -42,7 +44,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     props: {
       course,
     },
-    // revalidate: 1,
+    revalidate: 1,
   };
 };
 
@@ -51,7 +53,11 @@ type Props = {
 };
 
 const CourseDetailPage = ({ course }: Props) => {
-  console.log(course);
+  const [courses, getCourses] = useState<CourseData[]>([]);
+
+  useEffect(()=> {
+
+  }, [])
   return (
     <>
       <DefaultLayout title={course.title} desc={course.description}>
