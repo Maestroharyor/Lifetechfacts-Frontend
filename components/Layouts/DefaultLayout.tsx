@@ -25,6 +25,7 @@ type Props = {
 };
 
 const DefaultLayout = (props: Props) => {
+  const router = useRouter();
 
   return (
     <>
@@ -36,7 +37,7 @@ const DefaultLayout = (props: Props) => {
       <Mobileheader />
       <div className="h-full bg-gray-100 dark:bg-dark dark:text-light">
         {props.children}
-        <SidebarSocial />
+        {!router.query.slug && <SidebarSocial />}
       </div>
       <Footer />
     </>

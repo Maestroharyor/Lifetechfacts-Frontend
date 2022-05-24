@@ -35,18 +35,18 @@ const FeaturedCourse = ({course}: Props) => {
                   {course.courseOutline.slice(0, 5).map((outline) => (
                     <li
                       key={outline}
-                      className="text-lg rounded bg-light px-4 py-3 border border-light-border shadow-sm dark:bg-dark-background dark:text-light hover:shadow-lg hover:transform hover:scale-[1.1] cursor-pointer transition duration-300 ease-in-out"
+                      className="text-lg rounded bg-light px-4 py-3 border border-light-border shadow-sm dark:bg-dark-background dark:text-light hover:shadow-lg hover:transform hover:scale-[1.02] cursor-pointer transition duration-300 ease-in-out"
                     >
                       ✔️ {outline}
                     </li>
                   ))}
-                  <li className="text-lg rounded bg-light px-4 py-3 border border-light-border shadow-sm dark:bg-dark-background dark:text-light hover:shadow-lg hover:transform hover:scale-[1.1] cursor-pointer transition duration-300 ease-in-out">
+                  <li className="text-lg rounded bg-light px-4 py-3 border border-light-border shadow-sm dark:bg-dark-background dark:text-light hover:shadow-lg hover:transform hover:scale-[1.02] cursor-pointer transition duration-300 ease-in-out">
                     ✔️ {course.courseOutline.length - 4}+ more outlines
                   </li>
                 </ul>
               </div>
               <div className="rounded px-3 py-2 inline-flex flex-col sm:flex-row flex-wrap items-center gap-3 divide-y sm:divide-y-0 sm:divide-x justify-between text-lg">
-                <p className="flex-1 text-center px-3 pt-3 sm:pt-0">3 Weeks</p>
+                <p className="flex-1 text-center px-3 pt-3 sm:pt-0">4 Weeks</p>
                 <p className="flex-1 text-center px-3 pt-3 sm:pt-0">
                   5+ Practical Projects
                 </p>
@@ -68,8 +68,8 @@ const FeaturedCourse = ({course}: Props) => {
                     ${course.regularPrice.dollar}
                   </span>
                 </div>
-                <Link href={`/course/${course.url}`}>
-                  <a className="bg-primary text-white hover:bg-primary-hov hover:text-white dark:bg-warning dark:text-dark hover:dark:bg-warning-hov hover:dark:text-dark rounded px-5 py-3 transition duration-300 ease-in-out flex-1 text-center font-bold text-lg">
+                <Link href={`/course/${course.slug}`}>
+                  <a className="bg-primary text-white hover:bg-primary-hov hover:text-white dark:bg-warning dark:text-dark hover:dark:bg-warning-hov hover:dark:text-dark rounded px-5 py-3 transition duration-300 ease-in-out flex-1 text-center font-bold text-lg mt-4 sm:mt-0">
                     {"View Course Details"}
                   </a>
                 </Link>

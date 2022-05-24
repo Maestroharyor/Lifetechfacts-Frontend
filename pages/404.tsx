@@ -9,7 +9,7 @@ const NotFound: NextPage = () => {
         title="Page Not Found"
         desc="The page you are looking for might have been removed, had its name changed, or is temporarily unavailable."
       >
-        <div className="max-w-[700px] px-5 md:px-0 mx-auto flex flex-col gap-10 justify-center items-center h-[calc(100vh-118px)]">
+        <div className="max-w-[700px] px-5 md:px-0 mx-auto flex flex-col gap-10 justify-center items-center h-[calc(100vh-112px)]">
           <Image
             src="/img/general/404_page_not_found.png"
             alt="404 - Page Not Found"

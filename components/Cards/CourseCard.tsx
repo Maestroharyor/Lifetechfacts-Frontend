@@ -57,7 +57,7 @@ const CourseCard = ({ course }: Props) => {
               ${course.regularPrice.dollar}
             </span>
           </div>
-          <Link href={`/courses/${course.url}`}>
+          <Link href={`/course/${course.slug}`}>
             <a className="bg-primary text-white hover:bg-primary-hov hover:text-white dark:bg-warning dark:text-dark hover:dark:bg-warning-hov hover:dark:text-dark rounded px-5 py-3 transition duration-300 ease-in-out text-center font-bold text-md">
               {"View Course Details"}
             </a>
