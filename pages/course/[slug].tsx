@@ -89,7 +89,7 @@ const CourseDetailPage = ({ userLocation, course }: Props) => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-12 px-5 mb-10 md:mb-5 lg:px-10 gap-10 pt-10 text-lg">
+          <div className="grid grid-cols-1 lg:grid-cols-12 px-5 mb-10 md:mb-5 lg:px-10 gap-10 pt-10 text-lg items-start">
             <div className="lg:col-span-8">
               <div className="mb-10 text-xl">{course.additionalDetails}</div>
               <div>
@@ -116,8 +116,26 @@ const CourseDetailPage = ({ userLocation, course }: Props) => {
                   </li>
                 </ul>
               </div>
+              <div className=" mt-8 mb-10 rounded-lg border-2 border-primary shadow-lg p-5 lg:p-10 dark:bg-dark-background/50 dark:border-warning flex flex-col gap-5">
+                <h4 className="text-3xl font-bold text-primary dark:text-warning mb-8">
+                    The best time to get started is NOW!
+                </h4>
+                <p className="text-xl">{`There's never a bad time to learn in-demand skills like this. But the sooner, the better. So take your first step today by enrolling for the ${course.title}. You'll have a clear roadmap to developing the skills to build your own projects, get hired, and advance your career.`}</p>
+
+                {course.active ? (
+                  <Link href={`/#register`}>
+                    <a className="bg-primary text-white hover:bg-primary-hov hover:text-white dark:bg-warning dark:text-dark hover:dark:bg-warning-hov hover:dark:text-dark rounded-full px-5 py-4 transition duration-300 ease-in-out flex-1 text-center font-bold text-xl w-full text-center mt-4 sm:mt-0 block mb-5">
+                      {"Start Learning Now"}
+                    </a>
+                  </Link>
+                ) : (
+                  <div className="bg-info text-white rounded-full px-5 py-4 transition duration-300 ease-in-out flex-1 text-center font-bold text-xl w-full text-center mt-4 sm:mt-0 block mb-5">
+                    {"Coming Soon"}
+                  </div>
+                )}
+              </div>
             </div>
-            <div className="px-5 py-8 rounded shadow-lg lg:col-span-4 bg-white lg:-translate-y-[300px] lg:sticky lg:top-[0px] flex flex-col gap-6 dark:bg-dark-background">
+            <div className="px-5 py-8 rounded shadow-lg lg:col-span-4 bg-white lg:-translate-y-[300px] lg:sticky lg:top-[400px] flex flex-col gap-6 dark:bg-dark-background">
               <Image
                 src={course.featuredImage}
                 alt={course.title}
