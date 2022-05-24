@@ -1,14 +1,25 @@
 import type { NextPage } from "next";
 import { GetStaticProps } from "next";
+import dynamic from "next/dynamic";
 import DefaultLayout from "../components/Layouts/DefaultLayout";
-import RegistrationForm from "../components/Partials/RegistrationForm";
+// import RegistrationForm from "../components/Partials/RegistrationForm";
 import Courses from "../components/Partials/Courses";
 import HomeHero from "../components/Home/HomeHero";
-import HomeFaqSection from "../components/Home/HomeFaqSection";
+// import HomeFaqSection from "../components/Home/HomeFaqSection";
 import axios from "axios";
 import { CourseData } from "../data/courses";
 import HomeWhyUs from "../components/Home/HomeWhyUs";
-import {baseUrl} from "../server/index"
+import {baseUrl} from "../server/index";
+
+const RegistrationForm = dynamic(
+  () => import("../components/Home/HomeFaqSection"),
+  { ssr: false }
+)
+
+const HomeFaqSection = dynamic(
+  () => import("../components/Partials/RegistrationForm"),
+  { ssr: false }
+)
 
 export const getStaticProps: GetStaticProps = async () => {
 
