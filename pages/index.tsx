@@ -8,8 +8,13 @@ import HomeHero from "../components/Home/HomeHero";
 // import HomeFaqSection from "../components/Home/HomeFaqSection";
 import axios from "axios";
 import { CourseData } from "../data/courses";
-import HomeWhyUs from "../components/Home/HomeWhyUs";
+// import HomeWhyUs from "../components/Home/HomeWhyUs";
 import {baseUrl} from "../server/index";
+
+const HomeWhyUs = dynamic(
+  () => import("../components/Home/HomeWhyUs"),
+  { ssr: false }
+)
 
 const RegistrationForm = dynamic(
   () => import("../components/Home/HomeFaqSection"),

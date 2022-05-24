@@ -44,6 +44,7 @@ function Faqs({}: Props) {
           <AccordionSummary
             expandIcon={<MdKeyboardArrowDown className="dark:text-white" />}
             aria-controls="panel1a-content"
+            aria-label={`${faq.question} Question`}
             id="panel1a-header"
             className="dark:bg-dark-background dark:text-white"
           >
