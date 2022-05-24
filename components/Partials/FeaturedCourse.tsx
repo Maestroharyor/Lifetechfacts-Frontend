@@ -26,9 +26,9 @@ const FeaturedCourse = ({course}: Props) => {
                 <MdStar className="inline-block" />
                 <span>Featured Course</span>
               </p>
-              <h3 className="text-primary dark:text-warning text-6xl font-bold dark:text-white">
+              <h2 className="text-primary dark:text-warning text-6xl font-bold dark:text-white">
                 {course.title}
-              </h3>
+              </h2>
               <p className="text-lg">{course.additionalDetails}</p>
               <div>
                 <ul className="list-none my-4 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-x-10">
