@@ -17,7 +17,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      courses: courses.data.courses,
+      courses: courses.data.courses.courses,
     },
     revalidate: 1,
   };
@@ -28,6 +28,7 @@ type Props = {
 }
 
 const Home = ({courses}: Props) => {
+  console.log(courses)
   return (
     <>
       <DefaultLayout

@@ -20,7 +20,7 @@ export const getStaticPaths: GetStaticPaths = async (context) => {
     `${baseUrl}/courses`
   );
 
-  const paths = courses.data.courses.map((course: CourseData) => {
+  const paths = courses.data.courses.courses.map((course: CourseData) => {
     return { params: { slug: course.slug } };
   });
 
@@ -36,7 +36,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
     `${baseUrl}/courses`
   );
 
-  const course: CourseData = courses.data.courses.filter(
+  const course: CourseData = courses.data.courses.courses.filter(
     (course: CourseData) => course.slug === slug
   )[0];
 

@@ -15,7 +15,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      courses: courses.data.courses,
+      courses: courses.data.courses.courses,
     },
     revalidate: 1,
   };
