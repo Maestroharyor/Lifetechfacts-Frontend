@@ -17,12 +17,12 @@ const HomeWhyUs = dynamic(
 )
 
 const RegistrationForm = dynamic(
-  () => import("../components/Home/HomeFaqSection"),
+  () => import("../components/Partials/RegistrationForm"),
   { ssr: false }
 )
 
 const HomeFaqSection = dynamic(
-  () => import("../components/Partials/RegistrationForm"),
+  () => import("../components/Home/HomeFaqSection"),
   { ssr: false }
 )
 
@@ -57,7 +57,7 @@ const Home = ({courses}: Props) => {
           <HomeFaqSection />
 
           <div
-            className="bg-white dark:bg-dark-background/70 py-16 px-5 md:px-10"
+            className="bg-white dark:bg-dark-background/70 pt-16 px-5 md:px-10"
             id="register"
           >
             <div className=" gap-x-16 gap-y-10  items-center text-dark  max-w-[500px] mx-auto">
