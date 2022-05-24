@@ -44,7 +44,6 @@ type Props = {
 }
 
 const Home = ({courses}: Props) => {
-  console.log(courses)
   return (
     <>
       <DefaultLayout

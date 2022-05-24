@@ -1,12 +1,15 @@
 import Link from "next/link";
 import Image from "next/image";
 import { CourseData } from "../../data/courses";
+import { connect } from "react-redux";
+import { userLocationDataType } from "../../data/dataTypes";
 
 type Props = {
   course: CourseData;
-};
+  userLocation?: userLocationDataType;
+}
 
-const CourseCard = ({ course }: Props) => {
+const CourseCard = ({userLocation, course }: Props) => {
   return (
     <div
       key={course.id}
@@ -51,10 +54,10 @@ const CourseCard = ({ course }: Props) => {
         <div className="flex flex-col sm:flex-row justify-between items-center gap-5">
           <div>
             <span className="text-4xl font-bold">
-              ${course.salePrice.dollar}
+            {userLocation?.country.toLowerCase() === "nigeria" ? `₦${course.salePrice.naira}` : `$${course.salePrice.dollar}`}
             </span>{" "}
             <span className="text-lg opacity-90 line-through">
-              ${course.regularPrice.dollar}
+            {userLocation?.country.toLowerCase() === "nigeria" ? `₦${course.regularPrice.naira}` : `$${course.regularPrice.dollar}`}
             </span>
           </div>
           <Link href={`/course/${course.slug}`}>
@@ -68,4 +71,9 @@ const CourseCard = ({ course }: Props) => {
   );
 };
 
-export default CourseCard;
+
+const mapStateToProps = (state:any) => {
+  return state;
+};
+
+export default connect<userLocationDataType>(mapStateToProps)(CourseCard);

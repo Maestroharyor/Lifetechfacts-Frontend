@@ -1,14 +1,18 @@
 import Link from "next/link";
 import Image from "next/image";
+import { connect } from "react-redux";
 import { MdStar } from "react-icons/md";
 import { CourseData } from "../../data/courses";
+import { userLocationDataType } from "../../data/dataTypes";
 
 type Props = {
-    course: CourseData
+    course: CourseData;
+    userLocation?: userLocationDataType;
 }
 
 
-const FeaturedCourse = ({course}: Props) => {
+const FeaturedCourse = ({course, userLocation}: Props) => {
+  console.log(userLocation);
   return (
     <div className="bg-light dark:bg-dark-background/50 px-5">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-10  items-center  max-w-[1200px] mx-auto py-16 ">
@@ -62,10 +66,10 @@ const FeaturedCourse = ({course}: Props) => {
               <div className="flex flex-col sm:flex-row justify-between items-center gap-5 mt-4">
                 <div className="inline-flex gap-3 items-end">
                   <span className="text-6xl font-bold">
-                    ${course.salePrice.dollar}
+                    {userLocation?.country.toLowerCase() === "nigeria" ? `₦${course.salePrice.naira}` : `$${course.salePrice.dollar}`}
                   </span>{" "}
                   <span className="text-lg opacity-90 line-through">
-                    ${course.regularPrice.dollar}
+                  {userLocation?.country.toLowerCase() === "nigeria" ? `₦${course.regularPrice.naira}` : `$${course.regularPrice.dollar}`}
                   </span>
                 </div>
                 <Link href={`/course/${course.slug}`}>
@@ -81,4 +85,8 @@ const FeaturedCourse = ({course}: Props) => {
   )
 }
 
-export default FeaturedCourse
+const mapStateToProps = (state:any) => {
+  return state;
+};
+
+export default connect<userLocationDataType>(mapStateToProps)(FeaturedCourse);
