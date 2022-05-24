@@ -12,7 +12,7 @@ type Props = {
 
 
 const FeaturedCourse = ({course, userLocation}: Props) => {
-  console.log(userLocation);
+  // console.log(userLocation);
   return (
     <div className="bg-light dark:bg-dark-background/50 px-5">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-x-16 gap-y-10  items-center  max-w-[1200px] mx-auto py-16 ">

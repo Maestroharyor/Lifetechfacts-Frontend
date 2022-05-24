@@ -50,7 +50,7 @@ const RegistrationForm: FC = (props: Props) => {
   const onSuccess = (reference: any) => {
     message.loading("Updating information to server", 4);
     // Implementation for whatever you want to do with reference and after success call.
-    console.log(reference);
+    // console.log(reference);
     setPaymentStatus(true);
 
     const formData = {
@@ -89,7 +89,7 @@ const RegistrationForm: FC = (props: Props) => {
   // you can call this function anything
   const onClose = () => {
     // implementation for  whatever you want to do when the Paystack dialog closed.
-    console.log("closed");
+    // console.log("closed");
     message.error("Registration not yet completed");
     message.error("Payment Modal Closed");
 
