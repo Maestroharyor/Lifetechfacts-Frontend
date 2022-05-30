@@ -1,6 +1,7 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import type { NextApiRequest, NextApiResponse } from 'next';
-import {courses, CourseData} from "../../data/courses";
+import {courses} from "../../data/courses";
+import {CourseData} from "../../data/dataTypes";
 
 type Data = {
   courses: CourseData[];
