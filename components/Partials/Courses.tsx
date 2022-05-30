@@ -1,4 +1,4 @@
-import { CourseData } from "../../data/courses";
+import { CourseData } from "../../data/dataTypes";
 import CourseCard from "../Cards/CourseCard";
 import FeaturedCourse from "./FeaturedCourse";
 
