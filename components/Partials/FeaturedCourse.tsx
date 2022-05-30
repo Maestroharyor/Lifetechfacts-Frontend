@@ -2,8 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { connect } from "react-redux";
 import { MdStar } from "react-icons/md";
-import { CourseData } from "../../data/courses";
-import { userLocationDataType } from "../../data/dataTypes";
+import { userLocationDataType, CourseData } from "../../data/dataTypes";
 
 type Props = {
     course: CourseData;
