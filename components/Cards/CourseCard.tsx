@@ -1,8 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import { CourseData } from "../../data/courses";
 import { connect } from "react-redux";
-import { userLocationDataType } from "../../data/dataTypes";
+import { userLocationDataType, CourseData } from "../../data/dataTypes";
 
 type Props = {
   course: CourseData;

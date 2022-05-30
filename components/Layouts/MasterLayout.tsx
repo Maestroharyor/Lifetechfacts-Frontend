@@ -5,7 +5,7 @@ import { connect, useDispatch } from "react-redux";
 import { setDarkModeTheme, setLightModeTheme } from "../../store/theme/action";
 import { setUserLocation } from "../../store/userLocation/action";
 import { themeChange, themeOSLoad } from "../../functions/theme";
-import axios from "axios"
+import axios from "axios";
 // import Backtotop from "../Elements/Backtotop";
 
 type Props = {};
@@ -15,26 +15,27 @@ const MasterLayout = (props: any) => {
   const router = useRouter();
 
   const getUserLocation = async () => {
-    axios.get("https://extreme-ip-lookup.com/json/?key=A00l3ZIhZ81QUTOcfs9h")
-    .then(response => {
-      dispatch(setUserLocation(response.data));
-    })
-    .catch(error => {
-      // console.log(error)
-    })
-  }
+    if (process.env.NODE_ENV === "production") {
+      axios
+        .get("https://extreme-ip-lookup.com/json/?key=A00l3ZIhZ81QUTOcfs9h")
+        .then((response) => {
+          dispatch(setUserLocation(response.data));
+        })
+        .catch((error) => {
+          // console.log(error)
+        });
+    }
+  };
 
-  useLayoutEffect(()=> {
-    getUserLocation()
-  }, [])
+  useEffect(() => {
+    getUserLocation();
+  }, []);
 
-
-
-  useLayoutEffect(() => {
+  useEffect(() => {
     themeChange(props);
   });
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     themeOSLoad(props, dispatch, setDarkModeTheme, setLightModeTheme);
   }, []);
   return (

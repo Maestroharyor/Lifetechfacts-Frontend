@@ -10,7 +10,7 @@ const Community: NextPage = () => {
         title="Have a question or enquiry?"
         desc="The best tech/coding mentorship program for you"
       >
-        <div className="max-w-[700px] px-5 md:px-0 mx-auto flex flex-col gap-10 justify-center items-center h-[calc(100vh-118px)]">
+        <div className="max-w-[700px] px-5 md:px-0 mx-auto flex flex-col gap-10 justify-center items-center h-[calc(100vh-112px)]">
           <Image
             src="/svg/contact-us.svg"
             alt="Contact Us"

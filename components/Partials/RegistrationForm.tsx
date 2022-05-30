@@ -1,15 +1,21 @@
 import { useState, ChangeEvent, FC, FormEvent } from "react";
+import { connect, useDispatch } from "react-redux";
 import TextField from "@material-ui/core/TextField";
 import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
 import { message, Spin } from "antd";
-import { usePaystackPayment,  } from "react-paystack";
+import { usePaystackPayment } from "react-paystack";
 import axios from "axios";
 import { baseUrl } from "../../server/index";
+import { selectedCourseDataType, CourseData } from "../../data/dataTypes";
+import { setCourse } from "../../store/selectedCourse/action";
 
-type Props = {};
+type Props = {
+  courses: CourseData[];
+  selectedCourse?: selectedCourseDataType;
+};
 
 interface formData {
   fullname: string;
@@ -28,22 +34,30 @@ interface formData {
 //   publicKey: string | undefined;
 // };
 
-const RegistrationForm: FC = (props: Props) => {
+const RegistrationForm = ({ courses, selectedCourse }: Props) => {
+  const dispatch = useDispatch();
   const [fullname, setFullname] = useState("");
   const [email, setEmail] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
   const [ageGroup, setAgeGroup] = useState("");
   const [gender, setGender] = useState("");
-  const [course] = useState("Frontend web development");
+  // const [course, setCourse] = useState("");
   const [paymentStatus, setPaymentStatus] = useState(false);
   const [loading, setLoading] = useState(false);
   const [registered, setRegistered] = useState(false);
+  // console.log(selectedCourse);
+  const filteredCourse = courses.filter((course) => course.id === selectedCourse?.course)
+  const paidAmount = filteredCourse.length ? filteredCourse[0].salePrice.naira * 100 : 0;
+  // console.log({ paidAmount });
 
   const config = {
     reference: new Date().getTime().toString(),
     email: email,
-    amount: 200000,
-    publicKey: process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY === undefined ? "" : process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
+    amount: paidAmount,
+    publicKey:
+      process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY === undefined
+        ? ""
+        : process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY,
   };
 
   // you can call this function anything
@@ -58,7 +72,7 @@ const RegistrationForm: FC = (props: Props) => {
       email,
       phoneNumber,
       ageGroup,
-      course,
+      course: filteredCourse.length ? filteredCourse[0].title : "",
       gender,
       paymentStatus: "true",
     };
@@ -102,8 +116,16 @@ const RegistrationForm: FC = (props: Props) => {
 
   const registerForm = (e: FormEvent) => {
     e.preventDefault();
-    initializePayment(onSuccess, onClose);
+    if (selectedCourse) {
+      initializePayment(onSuccess, onClose);
+    } else {
+      message.error("Please select the course you're registering for");
+    }
   };
+
+  // useEffect(()=> {
+
+  // }, [])
   return (
     <>
       {!registered && (
@@ -181,23 +203,25 @@ const RegistrationForm: FC = (props: Props) => {
               </FormControl>
             </div>
             <div>
-              <FormControl
-                variant="standard"
-                disabled
-                fullWidth
-                className="text-white"
-              >
+              <FormControl variant="standard" fullWidth required>
                 <InputLabel id="demo-simple-select-standard-label">
-                  Course - Front-end Development
+                  Course
                 </InputLabel>
                 <Select
                   labelId="demo-simple-select-standard-label"
                   id="demo-simple-select-standard"
-                  label="Age"
+                  // value={selectedCourse}
+                  onChange={(e: ChangeEvent<{ value: unknown }>) =>
+                    dispatch(setCourse(e.target.value as string))
+                  }
+                  label="Course"
+                  value={selectedCourse?.course}
                 >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
+                  {courses.map((course) => (
+                    <MenuItem key={course.id} value={course.id}>
+                      {course.title}
+                    </MenuItem>
+                  ))}
                 </Select>
               </FormControl>
             </div>
@@ -236,6 +260,10 @@ const RegistrationForm: FC = (props: Props) => {
   );
 };
 
-export default RegistrationForm;
+const mapStateToProps = (state: any) => {
+  return state;
+};
+
+export default connect(mapStateToProps)(RegistrationForm);
 
 const SpinComponent = () => <Spin size="large" />;

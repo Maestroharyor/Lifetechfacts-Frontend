@@ -21,3 +21,32 @@ export interface userLocationDataType  {
     utcOffset : string;
  }
  
+
+ export interface CourseData {
+    id: string;
+    featuredImage: string;
+    title: string;
+    description: string;
+    slug: string;
+    category: string[];
+    additionalDetails?: string;
+    svgIconUrls: string[];
+    regularPrice: {
+      dollar: number;
+      naira: number;
+    };
+    salePrice: {
+      dollar: number;
+      naira: number;
+    };
+    noOfProjects: number;
+    courseOutline: string[];
+    active: boolean;
+    level: string;
+    prerequisites? : string[];
+    featured?: boolean;
+  }
+
+  export interface selectedCourseDataType {
+    course: string
+  }

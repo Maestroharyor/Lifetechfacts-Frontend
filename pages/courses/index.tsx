@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 import Image from "next/image";
 import DefaultLayout from "../../components/Layouts/DefaultLayout";
 import axios from "axios";
-import { CourseData } from "../../data/courses";
+import { CourseData } from "../../data/dataTypes";
 import CourseCard from "../../components/Cards/CourseCard";
 import { FaTwitter } from "react-icons/fa";
 import {baseUrl} from "../../server/index"

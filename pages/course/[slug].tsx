@@ -3,15 +3,19 @@ import type { NextPage } from "next";
 import { GetStaticProps, GetStaticPaths } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import { connect, useDispatch } from "react-redux";
 import DefaultLayout from "../../components/Layouts/DefaultLayout";
 import axios from "axios";
-import { CourseData } from "../../data/courses";
 import CourseCard from "../../components/Cards/CourseCard";
 import { FaChevronLeft, FaTwitter } from "react-icons/fa";
 import { ParsedUrlQuery } from "querystring";
 import { baseUrl } from "../../server/index";
-import { connect } from "react-redux";
-import { userLocationDataType } from "../../data/dataTypes";
+import {
+  userLocationDataType,
+  CourseData,
+  selectedCourseDataType,
+} from "../../data/dataTypes";
+import { setCourse } from "../../store/selectedCourse/action";
 
 interface IParams extends ParsedUrlQuery {
   slug: string;
@@ -49,9 +53,11 @@ export const getStaticProps: GetStaticProps = async (context) => {
 type Props = {
   course: CourseData;
   userLocation: userLocationDataType;
+  selectedCourse: selectedCourseDataType;
 };
 
 const CourseDetailPage = ({ userLocation, course }: Props) => {
+  const dispatch = useDispatch();
   const [relatedCourses, setRelatedCourses] = useState<CourseData[]>([]);
 
   const getOtherCourses = async () => {
@@ -118,13 +124,18 @@ const CourseDetailPage = ({ userLocation, course }: Props) => {
               </div>
               <div className=" mt-8 mb-10 rounded-lg border-2 border-primary shadow-lg p-5 lg:p-10 dark:bg-dark-background/50 dark:border-warning flex flex-col gap-5">
                 <h4 className="text-3xl font-bold text-primary dark:text-warning mb-8">
-                    The best time to get started is NOW!
+                  The best time to get started is NOW!
                 </h4>
                 <p className="text-xl">{`There's never a bad time to learn in-demand skills like this. But the sooner, the better. So take your first step today by enrolling for the ${course.title}. You'll have a clear roadmap to developing the skills to build your own projects, get hired, and advance your career.`}</p>
 
                 {course.active ? (
                   <Link href={`/#register`}>
-                    <a className="bg-primary text-white hover:bg-primary-hov hover:text-white dark:bg-warning dark:text-dark hover:dark:bg-warning-hov hover:dark:text-dark rounded-full px-5 py-4 transition duration-300 ease-in-out flex-1 text-center font-bold text-xl w-full text-center mt-4 sm:mt-0 block mb-5">
+                    <a
+                      className="bg-primary text-white hover:bg-primary-hov hover:text-white dark:bg-warning dark:text-dark hover:dark:bg-warning-hov hover:dark:text-dark rounded-full px-5 py-4 transition duration-300 ease-in-out flex-1 text-center font-bold text-xl w-full text-center mt-4 sm:mt-0 block mb-5"
+                      onClick={() => {
+                        dispatch(setCourse(course.id as string));
+                      }}
+                    >
                       {"Start Learning Now"}
                     </a>
                   </Link>
@@ -178,7 +189,12 @@ const CourseDetailPage = ({ userLocation, course }: Props) => {
               <div>
                 {course.active ? (
                   <Link href={`/#register`}>
-                    <a className="bg-primary text-white hover:bg-primary-hov hover:text-white dark:bg-warning dark:text-dark hover:dark:bg-warning-hov hover:dark:text-dark rounded-full px-5 py-4 transition duration-300 ease-in-out flex-1 text-center font-bold text-xl w-full text-center mt-4 sm:mt-0 block mb-5">
+                    <a
+                      className="bg-primary text-white hover:bg-primary-hov hover:text-white dark:bg-warning dark:text-dark hover:dark:bg-warning-hov hover:dark:text-dark rounded-full px-5 py-4 transition duration-300 ease-in-out flex-1 text-center font-bold text-xl w-full text-center mt-4 sm:mt-0 block mb-5"
+                      onClick={() => {
+                        dispatch(setCourse(course.id as string));
+                      }}
+                    >
                       {"Start Learning Now"}
                     </a>
                   </Link>
@@ -229,4 +245,6 @@ const mapStateToProps = (state: any) => {
   return state;
 };
 
-export default connect<userLocationDataType>(mapStateToProps)(CourseDetailPage);
+export default connect<userLocationDataType, selectedCourseDataType>(
+  mapStateToProps
+)(CourseDetailPage);

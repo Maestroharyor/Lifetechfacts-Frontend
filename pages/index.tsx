@@ -7,7 +7,7 @@ import Courses from "../components/Partials/Courses";
 import HomeHero from "../components/Home/HomeHero";
 // import HomeFaqSection from "../components/Home/HomeFaqSection";
 import axios from "axios";
-import { CourseData } from "../data/courses";
+import { CourseData } from "../data/dataTypes";
 // import HomeWhyUs from "../components/Home/HomeWhyUs";
 import {baseUrl} from "../server/index";
 
@@ -53,6 +53,7 @@ const Home = ({courses}: Props) => {
         <>
           <HomeHero />
           <Courses courses={courses} />
+           
           <HomeWhyUs />
           <HomeFaqSection />
 
@@ -61,7 +62,7 @@ const Home = ({courses}: Props) => {
             id="register"
           >
             <div className=" gap-x-16 gap-y-10  items-center text-dark  max-w-[500px] mx-auto">
-              <RegistrationForm />
+              <RegistrationForm courses={courses} />
             </div>
           </div>
         </>
