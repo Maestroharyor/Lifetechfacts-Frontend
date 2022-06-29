@@ -17,7 +17,7 @@ export const courses: CourseData[] = [
     },
     salePrice: {
       dollar: 5,
-      naira: 2000,
+      naira: 2100,
     },
     noOfProjects: 6,
     courseOutline: [
